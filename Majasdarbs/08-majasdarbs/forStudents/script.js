@@ -4,42 +4,41 @@ function checkZIP() {
       lv : [ '^(LV-)?\\d{4}$', "Latvias ZIPs jabut 4 simboliem un jasakas ar LV-: e.g. LV-3001 or 3007" ],
     };
   
-    // Read the country id
     var country = document.getElementById("Country").value;
-  
-    // Get the NPA field
     var ZIPField = document.getElementById("ZIP");
   
-    // Build the constraint checker
     var constraint = new RegExp(constraints[country][0], "");
       console.log(constraint);
   
-    // Check it!
+    // Parbaude
     if (constraint.test(ZIPField.value)) {
-      // The ZIP follows the constraint, we use the ConstraintAPI to tell it
       ZIPField.setCustomValidity("");
     }
     else {
-      // The ZIP doesn't follow the constraint, we use the ConstraintAPI to
-      // give a message about the format required for this country
+      // Izvada kļudas paziņojumu
       ZIPField.setCustomValidity(constraints[country][1]);
     }
   }
 
 function printValues() {
-    var matches = [];
-    var inputs = document.getElementsByTagName('input');
+    // izveidtot tukšu masivu kura saglabam vertibas
 
-    for(var key in inputs) {
-        var value = inputs[key].value;
-        matches.push(value);
-    }
+    // izmantojot getElementsByTagName('input') dabut visus ievadlaukus
+   
+    // ar for ciklu priekš katra no vertibam var key in inputs
+    
+    // dabujam vertibas inputs[key].value
+    
+    // ja value eksiste 
+    
+    // pievinojam vertibu masiva .push(value);
 
-    alert(matches);
+    // izvadam masivu vertibas uz ekrana alert();
 }
 
 window.onload = function () {
     document.getElementById("Country").onchange = checkZIP;
     document.getElementById("ZIP").oninput = checkZIP;
-    document.getElementById("form").addEventListener('submit', printValues);
+
+    // pievienot addEventListener priekš formas submit notikumam un izvadit funkciju printValues()
 }
