@@ -3,7 +3,5 @@ Nepiecišams izvedot js kalkulatoru ar iespeju
 - atņemt
 - dalīt 
 - reizināt
-
-Lietotajam ir iespeja pievienot skaitli izmantojot UI gan ari no tastaturas
-
+- Lietotajam ir iespeja pievienot skaitli izmantojot UI gan ari no tastaturas
 - pievinot iespeju saglabat ieprekšejos darbibas localStorage
